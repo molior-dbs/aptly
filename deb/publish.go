@@ -912,6 +912,9 @@ func (collection *PublishedRepoCollection) CheckDuplicate(repo *PublishedRepo) *
 
 // Update stores updated information about repo in DB
 func (collection *PublishedRepoCollection) Update(repo *PublishedRepo) (err error) {
+	collection.db.StartBatch()
+	defer collection.db.ResetBatch()
+
 	err = collection.db.Put(repo.Key(), repo.Encode())
 	if err != nil {
 		return
@@ -925,6 +928,7 @@ func (collection *PublishedRepoCollection) Update(repo *PublishedRepo) (err erro
 			}
 		}
 	}
+	err = collection.db.FinishBatch()
 	return
 }
 
@@ -1159,7 +1163,7 @@ func (collection *PublishedRepoCollection) CleanupPrefixComponentFiles(prefix st
 		}
 	}
 
-	return nil
+	return collection.db.FinishBatch()
 }
 
 // Remove removes published repository, cleaning up directories, files
@@ -1218,6 +1222,8 @@ func (collection *PublishedRepoCollection) Remove(publishedStorageProvider aptly
 		}
 	}
 
+	collection.db.StartBatch()
+	defer collection.db.ResetBatch()
 	err = collection.db.Delete(repo.Key())
 	if err != nil {
 		return err
