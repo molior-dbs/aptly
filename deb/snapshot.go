@@ -201,21 +201,14 @@ func (collection *SnapshotCollection) Add(snapshot *Snapshot) error {
 
 // Update stores updated information about snapshot in DB
 func (collection *SnapshotCollection) Update(snapshot *Snapshot) error {
-	collection.db.StartBatch()
-	defer collection.db.ResetBatch()
+	batch := collection.db.StartBatch()
 
-	err := collection.db.Put(snapshot.Key(), snapshot.Encode())
-	if err != nil {
-		return err
-	}
+	batch.Put(snapshot.Key(), snapshot.Encode())
 	if snapshot.packageRefs != nil {
-		err = collection.db.Put(snapshot.RefKey(), snapshot.packageRefs.Encode())
-		if err != nil {
-			return err
-		}
+		batch.Put(snapshot.RefKey(), snapshot.packageRefs.Encode())
 	}
 
-	return collection.db.FinishBatch()
+	return collection.db.FinishBatch(batch)
 }
 
 // LoadComplete loads additional information about snapshot
@@ -377,19 +370,10 @@ func (collection *SnapshotCollection) Drop(snapshot *Snapshot) error {
 
 	delete(collection.cache, snapshot.UUID)
 
-	collection.db.StartBatch()
-	defer collection.db.ResetBatch()
-	err := collection.db.Delete(snapshot.Key())
-	if err != nil {
-		return err
-	}
-
-	err = collection.db.Delete(snapshot.RefKey())
-	if err != nil {
-		return err
-	}
-
-	return collection.db.FinishBatch()
+	batch := collection.db.StartBatch()
+	batch.Delete(snapshot.Key())
+	batch.Delete(snapshot.RefKey())
+	return collection.db.FinishBatch(batch)
 }
 
 // Snapshot sorting methods
