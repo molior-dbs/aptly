@@ -858,6 +858,7 @@ type PublishedRepoCollection struct {
 func NewPublishedRepoCollection(db database.Storage) *PublishedRepoCollection {
 	return &PublishedRepoCollection{
 		db:      db,
+		db: db,
 	}
 }
 
