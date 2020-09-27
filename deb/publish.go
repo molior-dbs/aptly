@@ -858,7 +858,6 @@ type PublishedRepoCollection struct {
 // NewPublishedRepoCollection loads PublishedRepos from DB and makes up collection
 func NewPublishedRepoCollection(db database.Storage) *PublishedRepoCollection {
 	return &PublishedRepoCollection{
-		db:      db,
 		db: db,
 	}
 }

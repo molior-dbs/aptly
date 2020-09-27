@@ -61,7 +61,7 @@ func aptlyDbCleanup(cmd *commander.Command, args []string) error {
 		return err
 	}
 
-	context.CollectionFactory().Flush()
+	collectionFactory.Flush()
 
 	if verbose {
 		context.Progress().ColoredPrintf("@{y}Loading local repos:@|")
@@ -94,7 +94,7 @@ func aptlyDbCleanup(cmd *commander.Command, args []string) error {
 		return err
 	}
 
-	context.CollectionFactory().Flush()
+	collectionFactory.Flush()
 
 	if verbose {
 		context.Progress().ColoredPrintf("@{y}Loading snapshots:@|")
@@ -124,7 +124,7 @@ func aptlyDbCleanup(cmd *commander.Command, args []string) error {
 		return err
 	}
 
-	context.CollectionFactory().Flush()
+	collectionFactory.Flush()
 
 	if verbose {
 		context.Progress().ColoredPrintf("@{y}Loading published repositories:@|")
@@ -158,7 +158,7 @@ func aptlyDbCleanup(cmd *commander.Command, args []string) error {
 		return err
 	}
 
-	context.CollectionFactory().Flush()
+	collectionFactory.Flush()
 
 	// ... and compare it to the list of all packages
 	context.Progress().ColoredPrintf("@{w!}Loading list of all packages...@|")
@@ -200,7 +200,7 @@ func aptlyDbCleanup(cmd *commander.Command, args []string) error {
 		}
 	}
 
-	context.CollectionFactory().Flush()
+	collectionFactory.Flush()
 
 	// now, build a list of files that should be present in Repository (package pool)
 	context.Progress().ColoredPrintf("@{w!}Building list of files referenced by packages...@|")
