@@ -501,7 +501,7 @@ func apiMirrorsUpdate(c *gin.Context) {
 						task.Done = true
 						taskFinished <- task
 					case <-context.Done():
-						continue
+						return
 					}
 
 				}
