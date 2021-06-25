@@ -133,9 +133,9 @@ func (downloader *downloaderImpl) DownloadWithChecksum(ctx context.Context, url 
 	req, err := downloader.newRequest(ctx, "GET", url)
 
 	var temppath string
-	const delayBase = 1
+	const delayMax = time.Duration(5 * time.Minute)
+	delay := time.Duration(1 * time.Second)
 	const delayMultiplier = 2
-	delay := time.Duration(delayBase * time.Second)
 	for maxTries > 0 {
 		temppath, err = downloader.download(req, url, destination, expected, ignoreMismatch)
 
@@ -146,8 +146,11 @@ func (downloader *downloaderImpl) DownloadWithChecksum(ctx context.Context, url 
 				}
 				maxTries--
 				time.Sleep(delay)
-				// Sleep exponentially at the next retry
+				// Sleep exponentially at the next retry, but no longer than delayMax
 				delay *= delayMultiplier
+				if delay > delayMax {
+					delay = delayMax
+				}
 			} else {
 				if downloader.progress != nil {
 					downloader.progress.Printf("Error downloading %s: %s cannot retry...\n", url, err)
