@@ -102,7 +102,7 @@ func retryableError(err error) bool {
 		return true
 	}
 	// return false
-	return true  // TODO
+	return true // TODO
 }
 
 func (downloader *downloaderImpl) newRequest(ctx context.Context, method, url string) (*http.Request, error) {
@@ -133,6 +133,9 @@ func (downloader *downloaderImpl) DownloadWithChecksum(ctx context.Context, url 
 	req, err := downloader.newRequest(ctx, "GET", url)
 
 	var temppath string
+	const delayMax = time.Duration(5 * time.Minute)
+	delay := time.Duration(1 * time.Second)
+	const delayMultiplier = 2
 	for maxTries > 0 {
 		temppath, err = downloader.download(req, url, destination, expected, ignoreMismatch)
 
@@ -142,6 +145,12 @@ func (downloader *downloaderImpl) DownloadWithChecksum(ctx context.Context, url 
 					downloader.progress.Printf("Error downloading %s: %s retrying...\n", url, err)
 				}
 				maxTries--
+				time.Sleep(delay)
+				// Sleep exponentially at the next retry, but no longer than delayMax
+				delay *= delayMultiplier
+				if delay > delayMax {
+					delay = delayMax
+				}
 			} else {
 				if downloader.progress != nil {
 					downloader.progress.Printf("Error downloading %s: %s cannot retry...\n", url, err)
