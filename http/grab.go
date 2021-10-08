@@ -30,7 +30,7 @@ var (
 
 // NewGrabDownloader creates new expected downloader
 func NewGrabDownloader(downLimit int64, progress aptly.Progress) *GrabDownloader {
-	// TODO rate limiting and progress
+	// TODO rate limiting
 	client := grab.NewClient()
 	return &GrabDownloader{client: client}
 }
@@ -65,7 +65,6 @@ func (d *GrabDownloader) DownloadWithChecksum(ctx context.Context, url string, d
 }
 
 func (d *GrabDownloader) log(msg string, a ...interface{}) {
-	// TODO don't long to stdout
 	fmt.Printf(msg, a...)
 	if d.progress != nil {
 		d.progress.Printf(msg, a...)
@@ -106,7 +105,6 @@ func (d *GrabDownloader) maybeSetupChecksum(req *grab.Request, expected *utils.C
 }
 
 func (d *GrabDownloader) download(ctx context.Context, url string, destination string, expected *utils.ChecksumInfo, ignoreMismatch bool, maxTries int) error {
-	// TODO clean up dest dir on permanent failure
 	d.log("Download %s -> %s\n", url, destination)
 
 	req, err := grab.NewRequest(destination, url)
@@ -131,8 +129,12 @@ Loop:
 			break Loop
 		}
 	}
-	// TODO ignoreMismatch
-	return resp.Err()
+	err = resp.Err()
+	if err != nil && errors.Is(err, grab.ErrBadChecksum) && ignoreMismatch {
+		fmt.Printf("Ignoring checksum mismatch for %s\n", url)
+		return nil
+	}
+	return err
 }
 
 func (d *GrabDownloader) GetProgress() aptly.Progress {
