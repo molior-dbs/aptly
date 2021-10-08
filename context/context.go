@@ -219,7 +219,8 @@ func (context *AptlyContext) newDownloader(progress aptly.Progress) aptly.Downlo
 	if downloadLimit == 0 {
 		downloadLimit = context.config().DownloadLimit
 	}
-	return http.NewDownloader(downloadLimit*1024, progress)
+	// return http.NewDownloader(downloadLimit*1024, progress)
+	return http.NewGrabDownloader(downloadLimit*1024, progress)
 }
 
 // Downloader returns instance of current downloader
