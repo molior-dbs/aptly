@@ -176,7 +176,7 @@ func (g *GoSigner) Init() error {
 				var bytePassphrase []byte
 				bytePassphrase, err = terminal.ReadPassword(int(syscall.Stdin))
 				if err != nil {
-					return errors.Wrap(err, "error reading passphare")
+					return errors.Wrap(err, "error reading passphrase")
 				}
 
 				g.passphrase = string(bytePassphrase)
