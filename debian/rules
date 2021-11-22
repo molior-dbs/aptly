@@ -1,0 +1,14 @@
+#!/usr/bin/make -f
+
+override_dh_auto_install:
+	dh_auto_install -- --no-source
+
+VERSION := 1.2.3
+
+%:
+	dh $@ --buildsystem=golang --with=golang
+
+#override_dh_auto_build:
+#	dh_auto_build -- -X main.Version=$(VERSION)
+
+override_dh_auto_test:
