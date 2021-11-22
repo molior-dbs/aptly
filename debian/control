@@ -30,7 +30,8 @@ Build-Depends: debhelper (>= 11),
                golang-gopkg-check.v1-dev,
                golang-gopkg-cheggaaa-pb.v1-dev,
                golang-gopkg-h2non-filetype.v1-dev,
-               golang-uuid-dev
+               golang-uuid-dev,
+               git-core
 Standards-Version: 4.2.1
 Homepage: https://github.com/aptly-dev/aptly
 Vcs-Browser: https://salsa.debian.org/go-team/packages/aptly
