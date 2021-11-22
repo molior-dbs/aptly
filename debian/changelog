@@ -1,5 +1,5 @@
-aptly (1.4.1~alpha2) UNRELEASED; urgency=medium
+aptly (1.4.1~alpha3) UNRELEASED; urgency=medium
 
   * debianize
 
- -- André Roth <neolynx@gmail.com>  Mon, 22 Nov 2021 21:01:57 +0000
+ -- André Roth <neolynx@gmail.com>  Mon, 22 Nov 2021 21:05:05 +0000
