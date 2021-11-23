@@ -32,6 +32,7 @@ Build-Depends: debhelper (>= 11),
                golang-gopkg-h2non-filetype.v1-dev,
                golang-uuid-dev,
                golang-github-cavaliercoder-grab-dev,
+               golang-golang-x-time-dev,
                git-core
 Standards-Version: 4.2.1
 Homepage: https://github.com/aptly-dev/aptly
