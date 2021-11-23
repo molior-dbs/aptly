@@ -1,5 +1,6 @@
-aptly (1.4.1~alpha6) UNRELEASED; urgency=medium
+aptly (1.4.1~alpha7) UNRELEASED; urgency=medium
 
   * debianize
+  * grab downloader
 
- -- André Roth <neolynx@gmail.com>  Mon, 22 Nov 2021 21:49:18 +0000
+ -- André Roth <neolynx@gmail.com>  Tue, 23 Nov 2021 11:58:47 +0000
