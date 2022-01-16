@@ -1,9 +1,10 @@
-aptly (1.4.1~alpha10) UNRELEASED; urgency=medium
+aptly (1.4.1~molior) stable; urgency=medium
 
   * debianize
   * grab downloader
   * bump version 1.4.1~alpha8
   * bump version 1.4.1~alpha9
   * bump version 1.4.1~alpha10
+  * bump version 1.4.1~molior
 
- -- André Roth <neolynx@gmail.com>  Mon, 10 Jan 2022 09:30:08 +0000
+ -- André Roth <neolynx@gmail.com>  Sun, 16 Jan 2022 15:32:50 +0100
