@@ -63,6 +63,10 @@ func (d *GrabDownloader) DownloadWithChecksum(ctx context.Context, url string, d
 		if retryableError(err) {
 			maxTries--
 			d.log("Retrying download %s: %d\n", url, maxTries)
+                        delay *= delayMultiplier
+                        if delay > delayMax {
+                            delay = delayMax
+                        }
 			time.Sleep(delay)
 		} else {
 			// Can't retry
