@@ -34,7 +34,7 @@ require (
 	github.com/ugorji/go v1.1.4
 	github.com/wsxiaoys/terminal v0.0.0-20160513160801-0940f3fc43a0
 	golang.org/x/crypto v0.0.0-20180403160946-b2aa35443fbc
-	golang.org/x/sys v0.0.0-20190222072716-a9d3bda3a223
+	golang.org/x/sys v0.1.0
 	golang.org/x/time v0.0.0-20210723032227-1f47c861a9ac
 	gopkg.in/check.v1 v1.0.0-20161208181325-20d25e280405
 	gopkg.in/cheggaaa/pb.v1 v1.0.28 // indirect
