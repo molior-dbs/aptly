@@ -1,0 +1,15 @@
+#!/usr/bin/make -f
+
+include /usr/share/dpkg/pkg-info.mk
+
+override_dh_auto_install:
+	dh_auto_install -- --no-source
+
+%:
+	dh $@ --buildsystem=golang --with=golang
+
+override_dh_auto_build:
+	echo $(DEB_VERSION) > obj-`gcc -dumpmachine`/src/github.com/aptly-dev/aptly/VERSION
+	dh_auto_build
+
+override_dh_auto_test:
