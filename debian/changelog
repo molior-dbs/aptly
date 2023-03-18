@@ -1,0 +1,16 @@
+aptly (1.4.1~molior3) stable; urgency=medium
+
+  * bump version 1.4.1~molior3
+
+ -- André Roth <andre.roth@roche.com>  Fri, 04 Feb 2022 12:20:04 +0100
+
+aptly (1.4.1~molior) stable; urgency=medium
+
+  * debianize
+  * grab downloader
+  * bump version 1.4.1~alpha8
+  * bump version 1.4.1~alpha9
+  * bump version 1.4.1~alpha10
+  * bump version 1.4.1~molior
+
+ -- André Roth <neolynx@gmail.com>  Sun, 16 Jan 2022 15:32:50 +0100
