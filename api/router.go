@@ -9,18 +9,18 @@ import (
 	ctx "github.com/aptly-dev/aptly/context"
 	"github.com/aptly-dev/aptly/utils"
 	"github.com/gin-gonic/gin"
-	"github.com/prometheus/client_golang/prometheus/promhttp"
+	//"github.com/prometheus/client_golang/prometheus/promhttp"
 	"github.com/rs/zerolog/log"
 )
 
-var context *ctx.AptlyContext
+//var context *ctx.AptlyContext
 
-func apiMetricsGet() gin.HandlerFunc {
-	return func(c *gin.Context) {
-		countPackagesByRepos()
-		promhttp.Handler().ServeHTTP(c.Writer, c.Request)
-	}
-}
+//func apiMetricsGet() gin.HandlerFunc {
+	//return func(c *gin.Context) {
+		//countPackagesByRepos()
+		//promhttp.Handler().ServeHTTP(c.Writer, c.Request)
+	//}
+//}
 
 // Router returns prebuilt with routes http.Handler
 func Router(c *ctx.AptlyContext) http.Handler {
@@ -91,10 +91,10 @@ func Router(c *ctx.AptlyContext) http.Handler {
 	}
 
 	{
-		if c.Config().EnableMetricsEndpoint {
-			api.GET("/metrics", apiMetricsGet())
-		}
-		api.GET("/version", apiVersion)
+		//if c.Config().EnableMetricsEndpoint {
+			//api.GET("/metrics", apiMetricsGet())
+		//}
+                api.GET("/version", apiVersion)
 
 		isReady := &atomic.Value{}
 		isReady.Store(false)
