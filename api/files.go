@@ -109,7 +109,7 @@ func apiFilesUpload(c *gin.Context) {
 		}
 	}
 
-	apiFilesUploadedCounter.WithLabelValues(c.Params.ByName("dir")).Inc()
+	//apiFilesUploadedCounter.WithLabelValues(c.Params.ByName("dir")).Inc()
 	c.JSON(200, stored)
 
 }
