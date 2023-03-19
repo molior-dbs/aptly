@@ -2,7 +2,7 @@ package api
 
 import (
 	"net/http"
-	"os"
+	//"os"
 	"sync/atomic"
 
 	"github.com/aptly-dev/aptly/aptly"
@@ -10,10 +10,10 @@ import (
 	"github.com/aptly-dev/aptly/utils"
 	"github.com/gin-gonic/gin"
 	//"github.com/prometheus/client_golang/prometheus/promhttp"
-	"github.com/rs/zerolog/log"
+	//"github.com/rs/zerolog/log"
 )
 
-//var context *ctx.AptlyContext
+var context *ctx.AptlyContext
 
 //func apiMetricsGet() gin.HandlerFunc {
 	//return func(c *gin.Context) {
@@ -48,9 +48,9 @@ func Router(c *ctx.AptlyContext) http.Handler {
 
 	router.Use(gin.Recovery(), gin.ErrorLogger())
 
-	if c.Config().EnableMetricsEndpoint {
-		MetricsCollectorRegistrar.Register(router)
-	}
+	//if c.Config().EnableMetricsEndpoint {
+		//MetricsCollectorRegistrar.Register(router)
+	//}
 
 	if c.Config().ServeInAPIMode {
 		router.GET("/repos/", reposListInAPIMode(c.Config().FileSystemPublishRoots))
