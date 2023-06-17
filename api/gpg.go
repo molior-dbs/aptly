@@ -25,7 +25,7 @@ func apiGPGAddKey(c *gin.Context) {
 	}
 
 	var err error
-	args := []string{"--no-default-keyring"}
+	args := []string{"--no-default-keyring", "--allow-non-selfsigned-uid"}
 	keyring := "trustedkeys.gpg"
 	if len(b.Keyring) > 0 {
 		keyring = b.Keyring
@@ -61,7 +61,7 @@ func apiGPGAddKey(c *gin.Context) {
 		args = append(args, keys...)
 	}
 
-	finder := pgp.GPG1Finder()
+	finder := pgp.GPGDefaultFinder()
 	gpg, _, err := finder.FindGPG()
 	if err != nil {
 		AbortWithJSONError(c, 400, err)
