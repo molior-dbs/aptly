@@ -1,3 +1,9 @@
+aptly (1.6.0~alpha1) stable; urgency=medium
+
+  * bump version 1.6.0~alpha1
+
+ -- André Roth <neolynx@gmail.com>  Wed, 01 Nov 2023 16:39:28 +0100
+
 aptly (1.4.1~molior3) stable; urgency=medium
 
   * bump version 1.4.1~molior3
