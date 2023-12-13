@@ -1,3 +1,10 @@
+aptly (1.6.0~alpha3) stable; urgency=medium
+
+  * build for molior 1.5
+  * add docker config
+
+ -- André Roth <neolynx@gmail.com>  Wed, 13 Dec 2023 18:47:16 +0100
+
 aptly (1.6.0~alpha2) stable; urgency=medium
 
   * aptly: release 1.6.0~alpha1
