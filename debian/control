@@ -40,6 +40,7 @@ Build-Depends: debhelper (>= 11),
                golang-github-rs-zerolog-dev (>= 1.28.0),
                golang-github-mattn-go-colorable-dev,
                golang-github-aws-aws-sdk-go-v2-dev,
+               golang-github-protonmail-go-crypto-dev,
                git-core
 Standards-Version: 4.2.1
 Homepage: https://github.com/aptly-dev/aptly
