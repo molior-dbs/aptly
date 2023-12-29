@@ -9,6 +9,7 @@ override_dh_auto_install:
 	dh $@ --buildsystem=golang --with=golang
 
 override_dh_auto_build:
-	dh_auto_build -- -ldflags "-X main.Version=$(DEB_VERSION)"
+	echo $(DEB_VERSION) > VERSION
+	dh_auto_build
 
 override_dh_auto_test:
