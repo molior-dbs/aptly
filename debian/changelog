@@ -1,3 +1,28 @@
+aptly (1.6.0~alpha5) stable; urgency=medium
+
+  * aptly: release 1.6.0~alpha4
+  * api: add s3 publish root list
+  * remove obsolete files
+  * debian: create VERSION file
+  * main: embed version
+  * api: provide gpg output
+  * aptly: release 1.6.0~alpha3
+  * build for molior 1.5
+  * add docker config
+  * aptly: release 1.6.0~alpha2
+  * aptly: release 1.6.0~alpha1
+  * debian: disable MetricsCollectorRegistrar
+  * debian: disable JSONLogger
+  * debian: disable prometheus
+  * debian: disable metrics
+  * debian: disable prometheus
+  * make compatible with go 2.15
+  * gpg api: allow self signed and use default gpg version
+  * debianize
+  * ...
+
+ -- André Roth <neolynx@gmail.com>  Fri, 29 Dec 2023 14:01:48 +0100
+
 aptly (1.6.0~alpha4) stable; urgency=medium
 
   * api: add s3 publish root list
