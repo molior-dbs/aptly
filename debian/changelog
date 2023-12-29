@@ -1,3 +1,13 @@
+aptly (1.6.0~alpha4) stable; urgency=medium
+
+  * api: add s3 publish root list
+  * remove obsolete files
+  * debian: create VERSION file
+  * main: embed version
+  * api: provide gpg output
+
+ -- André Roth <neolynx@gmail.com>  Fri, 29 Dec 2023 14:00:52 +0100
+
 aptly (1.6.0~alpha3) stable; urgency=medium
 
   * build for molior 1.5
