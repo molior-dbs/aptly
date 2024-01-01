@@ -1,3 +1,9 @@
+aptly (1.6.0~alpha9) stable; urgency=medium
+
+  * debug
+
+ -- André Roth <neolynx@gmail.com>  Mon, 01 Jan 2024 16:46:40 +0100
+
 aptly (1.6.0~alpha8) stable; urgency=medium
 
   * debian: support building on arm
