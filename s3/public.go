@@ -486,7 +486,11 @@ func (storage *PublishedStorage) FileExists(path string) (bool, error) {
 	_, err := storage.s3.HeadObject(context.TODO(), params)
 	if err != nil {
 		var notFoundErr *types.NotFound
+                log.Info().Msg("s3 file does not exist")
+                log.Info().Msgf("err: %s", err)
+
 		if errors.As(err, &notFoundErr) {
+                    log.Info().Msgf("not found: %s", notFoundErr)
 			return false, nil
 		}
 
