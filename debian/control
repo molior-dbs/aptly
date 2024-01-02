@@ -5,7 +5,10 @@ Maintainer: Debian Go Packaging Team <team+pkg-go@tracker.debian.org>
 Uploaders: TODO <admin@lepton.exnihilo>
 Build-Depends: debhelper (>= 11),
                dh-golang,
-               golang-any (>> 2:1.21),
+               golang (>= 2:1.20),
+               golang-doc (>= 2:1.20),
+               golang-go (>= 2:1.20), 
+               golang-src (>= 2:1.20),
                golang-github-aleksi-pointer-dev,
                golang-github-awalterschulze-gographviz-dev,
                golang-github-aws-aws-sdk-go-dev,
@@ -41,7 +44,7 @@ Build-Depends: debhelper (>= 11),
                golang-github-mattn-go-colorable-dev,
                golang-github-aws-aws-sdk-go-v2-dev,
                golang-github-protonmail-go-crypto-dev,
-               git-core
+               git
 Standards-Version: 4.2.1
 Homepage: https://github.com/aptly-dev/aptly
 Vcs-Browser: https://salsa.debian.org/go-team/packages/aptly
