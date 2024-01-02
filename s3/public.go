@@ -22,6 +22,7 @@ import (
 	"github.com/pkg/errors"
 	"github.com/rs/zerolog"
 	"github.com/rs/zerolog/log"
+        "github.com/aws/aws-sdk-go/aws/awserr"
 )
 
 const errCodeNotFound = "NotFound"
@@ -487,13 +488,15 @@ func (storage *PublishedStorage) FileExists(path string) (bool, error) {
 	if err != nil {
 		var notFoundErr *types.NotFound
                 log.Info().Msg("s3 file does not exist")
-                log.Info().Msgf("err: %s", err)
+
+                if aerr, ok := err.(awserr.Error); ok {
+                    log.Info().Msgf("awserr: %d", aerr.Code())
+                }
 
 		if errors.As(err, &notFoundErr) {
                     log.Info().Msgf("not found: %s", notFoundErr)
 			return false, nil
 		}
-
 		return false, err
 	}
 
