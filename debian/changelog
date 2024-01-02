@@ -1,3 +1,9 @@
+aptly (1.6.0~alpha10) stable; urgency=medium
+
+  * debian: use go 1.21 from backports
+
+ -- André Roth <neolynx@gmail.com>  Tue, 02 Jan 2024 12:34:14 +0100
+
 aptly (1.6.0~alpha9) stable; urgency=medium
 
   * debug
