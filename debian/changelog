@@ -1,3 +1,9 @@
+aptly (1.6.0~alpha16) stable; urgency=medium
+
+  * s3: respect default ACLs
+
+ -- André Roth <neolynx@gmail.com>  Tue, 02 Jan 2024 20:10:09 +0100
+
 aptly (1.6.0~alpha15) stable; urgency=medium
 
   * s3: clear / invalidate pathCache for repeated operations
