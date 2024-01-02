@@ -22,6 +22,9 @@ import (
 	"github.com/pkg/errors"
 	"github.com/rs/zerolog"
 	"github.com/rs/zerolog/log"
+	awsauth "github.com/smira/go-aws-auth"
+	"github.com/rs/zerolog"
+	"github.com/rs/zerolog/log"
 )
 
 const errCodeNotFound = "NotFound"
@@ -490,6 +493,17 @@ func (storage *PublishedStorage) FileExists(path string) (bool, error) {
 		if errors.As(err, &notFoundErr) {
 			return false, nil
 		}
+
+                // falback in case the above condidition fails
+           	var opErr *smithy.OperationError
+                if errors.As(err, &opErr) {
+                    var ae smithy.APIError
+                    if errors.As(err, &ae) {
+                        if (ae.ErrorCode() == "NotFound") {
+                            return false, nil
+                        }
+                    }
+                }
 
 		return false, err
 	}
