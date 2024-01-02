@@ -1,3 +1,9 @@
+aptly (1.6.0~alpha12) stable; urgency=medium
+
+  * debug
+
+ -- André Roth <neolynx@gmail.com>  Tue, 02 Jan 2024 14:58:22 +0100
+
 aptly (1.6.0~alpha11) stable; urgency=medium
 
   * debian: fix backport dependencies
