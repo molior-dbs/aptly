@@ -1,3 +1,9 @@
+aptly (1.6.0~alpha13) stable; urgency=medium
+
+  * bump version 1.6.0~alpha13
+
+ -- André Roth <neolynx@gmail.com>  Tue, 02 Jan 2024 15:18:19 +0100
+
 aptly (1.6.0~alpha12) stable; urgency=medium
 
   * debug
