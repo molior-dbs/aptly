@@ -1,3 +1,28 @@
+aptly (1.6.0~alpha18) stable; urgency=medium
+
+  * aptly: release 1.6.0~alpha17
+  * aptly: release 1.6.0~alpha16
+  * aptly: release 1.6.0~alpha15
+  * aptly: release 1.6.0~alpha14
+  * aptly: release 1.6.0~alpha13
+  * aptly: release 1.6.0~alpha12
+  * aptly: release 1.6.0~alpha11
+  * debian: fix backport dependencies
+  * aptly: release 1.6.0~alpha10
+  * debian: use go 1.21 from backports
+  * aptly: release 1.6.0~alpha9
+  * debug
+  * aptly: release 1.6.0~alpha8
+  * debian: support building on arm
+  * aptly: release 1.6.0~alpha7
+  * debian: add missing dependency
+  * aptly: release 1.6.0~alpha6
+  * debian: fix embed VERSION file location
+  * aptly: release 1.6.0~alpha5
+  * ...
+
+ -- André Roth <neolynx@gmail.com>  Sat, 06 Jan 2024 16:36:22 +0100
+
 aptly (1.6.0~alpha17) stable; urgency=medium
 
   * s3: remove fallback for file exists
