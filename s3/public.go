@@ -22,9 +22,6 @@ import (
 	"github.com/pkg/errors"
 	"github.com/rs/zerolog"
 	"github.com/rs/zerolog/log"
-	awsauth "github.com/smira/go-aws-auth"
-	"github.com/rs/zerolog"
-	"github.com/rs/zerolog/log"
 )
 
 const errCodeNotFound = "NotFound"
@@ -497,24 +494,10 @@ func (storage *PublishedStorage) FileExists(path string) (bool, error) {
 	_, err := storage.s3.HeadObject(context.TODO(), params)
 	if err != nil {
 		var notFoundErr *types.NotFound
-                log.Info().Msg("s3 file does not exist")
-                log.Info().Msgf("err: %s", err)
 
 		if errors.As(err, &notFoundErr) {
-                    log.Info().Msgf("not found: %s", notFoundErr)
 			return false, nil
 		}
-
-                // falback in case the above condidition fails
-           	var opErr *smithy.OperationError
-                if errors.As(err, &opErr) {
-                    var ae smithy.APIError
-                    if errors.As(err, &ae) {
-                        if (ae.ErrorCode() == "NotFound") {
-                            return false, nil
-                        }
-                    }
-                }
 
 		return false, err
 	}
