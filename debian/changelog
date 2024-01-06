@@ -1,3 +1,9 @@
+aptly (1.6.0~alpha20) stable; urgency=medium
+
+  * s3: cache only pool path in LinkFromPool
+
+ -- André Roth <neolynx@gmail.com>  Sat, 06 Jan 2024 18:39:02 +0100
+
 aptly (1.6.0~alpha19) stable; urgency=medium
 
   * bump version 1.6.0~alpha19
