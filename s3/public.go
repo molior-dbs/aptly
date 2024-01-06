@@ -317,7 +317,7 @@ func (storage *PublishedStorage) LinkFromPool(publishedDirectory, fileName strin
 	poolPath := filepath.Join(storage.prefix, relPath)
 
 	if storage.pathCache == nil {
-		paths, md5s, err := storage.internalFilelist("", true)
+		paths, md5s, err := storage.internalFilelist(filepath.Join(storage.prefix, publishedDirectory), true)
 		if err != nil {
 			return errors.Wrap(err, "error caching paths under prefix")
 		}
