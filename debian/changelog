@@ -1,3 +1,26 @@
+aptly (1.6.0~alpha22) stable; urgency=medium
+
+  * aptly: release 1.6.0~alpha21
+  * aptly: release 1.6.0~alpha19
+  * s3 api: get publish root list
+  * gpg api: allow self signed and use default gpg version
+  * debian: disable MetricsCollectorRegistrar
+  * debian: disable JSONLogger
+  * debian: disable prometheus
+  * debian: disable metrics
+  * debian: disable prometheus
+  * debianize
+  * s3: call s3.ListFiles only on publish path in LinkFromPool
+  * fix golangci-lint errors
+  * fix indentation
+  * s3: respect default ACLs
+  * s3: clear / invalidate pathCache for repeated operations
+  * s3: fix FileExists not working in some go versions
+  * Update AUTHORS
+  * clean pathCache
+
+ -- André Roth <neolynx@gmail.com>  Sun, 14 Jan 2024 20:53:44 +0100
+
 aptly (1.6.0~alpha21) stable; urgency=medium
 
   * s3: call s3.ListFiles only on publish path in LinkFromPool
