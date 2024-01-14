@@ -28,7 +28,7 @@ dev:
 
 check: system/env
 ifeq ($(RUN_LONG_TESTS), yes)
-	golangci-lint run
+	golangci-lint run -v
 	system/env/bin/flake8
 endif
 
