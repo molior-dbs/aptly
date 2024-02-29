@@ -264,9 +264,9 @@ func NewPublishedRepo(storage, prefix, distribution string, architectures []stri
 		}
 	}
 
-	if strings.Contains(distribution, "/") {
-		return nil, fmt.Errorf("invalid distribution %s, '/' is not allowed", distribution)
-	}
+	//if strings.Contains(distribution, "/") {
+		//return nil, fmt.Errorf("invalid distribution %s, '/' is not allowed", distribution)
+	//}
 
 	result.Distribution = distribution
 
