@@ -67,7 +67,7 @@ var (
 func NewPublishedStorageRaw(
 	bucket, defaultACL, prefix, storageClass, encryptionMethod string,
 	plusWorkaround, disabledMultiDel, forceVirtualHostedStyle bool,
-	config *aws.Config, endpoint string,
+	config *aws.Config, /* endpoint */ _ string,
 ) (*PublishedStorage, error) {
 	var acl types.ObjectCannedACL
 	if defaultACL == "" || defaultACL == "private" {
@@ -82,10 +82,10 @@ func NewPublishedStorageRaw(
 		storageClass = ""
 	}
 
-	var baseEndpoint *string
-	if endpoint != "" {
-		baseEndpoint = aws.String(endpoint)
-	}
+	// var baseEndpoint *string
+	// if endpoint != "" {
+	// 	baseEndpoint = aws.String(endpoint)
+	// }
 
 	result := &PublishedStorage{
 		s3: s3.NewFromConfig(*config, func(o *s3.Options) {
