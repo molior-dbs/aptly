@@ -1,6 +1,6 @@
 config_version: "1"
 targets:
   molior:
-  - "1.5-dev"
+  - "1.5"
 build_after:
   - "go-xz"
