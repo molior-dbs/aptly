@@ -19,7 +19,6 @@ import (
 	"github.com/aptly-dev/aptly/azure"
 	"github.com/aptly-dev/aptly/console"
 	"github.com/aptly-dev/aptly/database"
-	"github.com/aptly-dev/aptly/database/etcddb"
 	"github.com/aptly-dev/aptly/database/goleveldb"
 	"github.com/aptly-dev/aptly/deb"
 	"github.com/aptly-dev/aptly/files"
@@ -308,8 +307,6 @@ func (context *AptlyContext) _database() (database.Storage, error) {
 				dbPath = context.config().DatabaseBackend.DBPath
 			}
 			context.database, err = goleveldb.NewDB(dbPath)
-		case "etcd":
-			context.database, err = etcddb.NewDB(context.config().DatabaseBackend.URL)
 		default:
 			context.database, err = goleveldb.NewDB(context.dbPath())
 		}
