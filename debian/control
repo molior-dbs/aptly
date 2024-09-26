@@ -76,7 +76,6 @@ Build-Depends: bash-completion,
                golang-gopkg-yaml.v2-dev,
                golang-go.uber-multierr-dev,
                golang-go.uber-zap-dev,
-               golang-etcd-server-dev (>= 3.5.15-7),
                golang-gopkg-yaml.v3-dev,
                git
 Standards-Version: 4.7.0
