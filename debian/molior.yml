@@ -4,3 +4,5 @@ targets:
   - "1.5"
 build_after:
   - "go-xz"
+  - "golang-github-swaggo-files"
+  - "golang-github-swaggo-gin-swagger"
