@@ -76,6 +76,9 @@ Build-Depends: bash-completion,
                golang-go.uber-multierr-dev,
                golang-go.uber-zap-dev,
                golang-gopkg-yaml.v3-dev,
+               golang-github-swaggo-files-dev,
+               golang-github-swaggo-gin-swagger-dev,
+               swag,
                git
 Standards-Version: 4.7.0
 Homepage: https://www.aptly.info
