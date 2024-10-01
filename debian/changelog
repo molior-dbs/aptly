@@ -1,3 +1,22 @@
+aptly (1.6.0~beta1.molior35) stable; urgency=medium
+
+  * aptly: release 1.6.0~beta1.molior34
+  * debian: add swagger docs
+  * WORKAROUND s3 endpoint api change
+  * debian: s3 compatibility
+  * debian: disable etcd
+  * test bookworm build
+  * build for molior 1.5-dev
+  * remove github
+  * build for molior
+  * debian native build
+  * Merge pull request #1348 from aptly-dev/improve/debian-build
+  * debian: fix lintian complaints
+  * debian: update dependencies
+  * build-deb: build only host architecture
+
+ -- André Roth <neolynx@gmail.com>  Tue, 01 Oct 2024 20:14:16 +0200
+
 aptly (1.6.0~beta1.molior34) stable; urgency=medium
 
   * fix swag
