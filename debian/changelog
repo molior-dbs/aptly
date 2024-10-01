@@ -1,3 +1,9 @@
+aptly (1.6.0~beta1.molior34) stable; urgency=medium
+
+  * fix swag
+
+ -- André Roth <neolynx@gmail.com>  Tue, 01 Oct 2024 19:28:52 +0200
+
 aptly (1.6.0~beta1) stable; urgency=medium
 
   * upstream aptly debianization
