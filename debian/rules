@@ -12,6 +12,7 @@ override_dh_auto_clean:
 
 override_dh_auto_build:
 	echo $(DEB_VERSION) > obj-$(DEB_TARGET_GNU_TYPE)/src/github.com/aptly-dev/aptly/VERSION
+	cd obj-$(DEB_TARGET_GNU_TYPE)/src/github.com/aptly-dev/aptly && swag init
 	GOFLAGS="-buildmode=pie" dh_auto_build
 
 override_dh_auto_test:
