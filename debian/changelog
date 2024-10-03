@@ -1,3 +1,29 @@
+aptly (1.6.0~beta1.molior37) stable; urgency=medium
+
+  * aptly: release 1.6.0~beta1.molior36
+  * aptly: release 1.6.0~beta1.molior35
+  * aptly: release 1.6.0~beta1.molior34
+  * debian: add swagger docs
+  * WORKAROUND s3 endpoint api change
+  * debian: s3 compatibility
+  * debian: disable etcd
+  * test bookworm build
+  * build for molior 1.5-dev
+  * remove github
+  * build for molior
+  * debian native build
+  * Merge pull request #1162 from aptly-dev/feature/176-snapshot-pull-
+    api
+  * Merge pull request #1352 from aptly-dev/feature/storage-api
+  * mirror api: update documentation
+  * system-tests: show execution time
+  * Makefile: more colors
+  * swagger: improve doc
+  * snapshot merge: use proper REST api
+  * ...
+
+ -- André Roth <neolynx@gmail.com>  Thu, 03 Oct 2024 23:23:24 +0200
+
 aptly (1.6.0~beta1.molior36) stable; urgency=medium
 
   * bump version 1.6.0~beta1.molior36
