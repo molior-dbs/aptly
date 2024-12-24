@@ -1,34 +1,8 @@
-aptly (1.6.0-molior2) stable; urgency=medium
+aptly (1.6.0-molior3) stable; urgency=medium
 
-  * aptly: release 1.6.0-molior1
-  * debian: enable pie build
-  * debian: add swagger docs
-  * build for molior
-  * remove github
-  * debian: disable etcd
-  * config: comment out swagger
-  * debian: embed yaml config
-  * Revert "use new azure-sdk"
-  * disable swagger
-  * debian native build
-  * update changelog
-  * Revert "debian: do not conflict with gnupg1"
-  * Merge pull request #1411 from schoenherrg/feature/filter-using-file
-  * cmd filter: add comment and cleanup
-  * Merge pull request #1407 from aptly-
-    dev/dependabot/go_modules/golang.org/x/crypto-0.31.0
-  * Update man page
-  * Extend system tests for @file filter syntax
-  * Update system tests
-  * ...
+  * based on upstream 1.6.0
 
- -- André Roth <neolynx@gmail.com>  Sat, 21 Dec 2024 18:59:55 +0100
-
-aptly (1.6.0-molior1) stable; urgency=medium
-
-  * bump version 1.6.0-molior1
-
- -- André Roth <neolynx@gmail.com>  Wed, 11 Dec 2024 13:09:48 +0100
+ -- André Roth <neolynx@gmail.com>  Wed, 25 Dec 2024 00:45:10 +0100
 
 aptly (1.6.0) stable; urgency=medium
 
