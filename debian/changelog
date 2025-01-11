@@ -1,3 +1,29 @@
+aptly (1.6.0-molior4) stable; urgency=medium
+
+  * aptly: release 1.6.0-molior3
+  * aptly: release 1.6.0-molior2
+  * aptly: release 1.6.0-molior1
+  * debian: enable pie build
+  * debian: add swagger docs
+  * build for molior
+  * remove github
+  * debian: disable etcd
+  * debian: embed yaml config
+  * Revert "use new azure-sdk"
+  * disable swagger
+  * debian native build
+  * go mod tidy
+  * Merge pull request #1423 from mikelolasagasti/google-uuid
+  * Switch to google/uuid module
+  * Merge pull request #1187 from aptly-
+    dev/dependabot/go_modules/github.com/gin-gonic/gin-1.9.1
+  * Bump github.com/gin-gonic/gin from 1.7.7 to 1.9.1
+  * Bump golang.org/x/net from 0.28.0 to 0.33.0
+  * update README
+  * ...
+
+ -- André Roth <neolynx@gmail.com>  Sun, 12 Jan 2025 00:11:29 +0100
+
 aptly (1.6.0-molior3) stable; urgency=medium
 
   * based on upstream 1.6.0
