@@ -1,3 +1,9 @@
+aptly (1.6.0-molior5) stable; urgency=medium
+
+  * bump version 1.6.0-molior5
+
+ -- André Roth <neolynx@gmail.com>  Sun, 26 Jan 2025 13:10:56 +0100
+
 aptly (1.6.0-molior4) stable; urgency=medium
 
   * aptly: release 1.6.0-molior3
