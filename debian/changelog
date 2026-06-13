@@ -1,3 +1,28 @@
+aptly (1.6.2-molior1) stable; urgency=medium
+
+  * debian: enable pie build
+  * debian: add swagger docs
+  * build for molior
+  * remove github
+  * debian: disable etcd
+  * debian: fix build
+  * go: mod tidy
+  * debian: embed yaml config
+  * Revert "use new azure-sdk"
+  * Revert "go1.24: fix lint, unit and system tests"
+  * Revert "ran "gofmt -s -w ." to format the code"
+  * disable swagger
+  * debian native build
+  * cleanup
+  * ci: update codecov-action to 7.0.0
+  * ci: use correct ubuntu 26.04 codename
+  * Merge pull request #1565 from muresan/fix/aptly-crash-db-recover
+  * Merge pull request #1567 from aptly-dev/fix/doc-typos
+  * Merge pull request #1571 from aptly-dev/feature/ubu26.04
+  * ...
+
+ -- André Roth <neolynx@gmail.com>  Sat, 13 Jun 2026 17:53:42 +0200
+
 aptly (1.6.2) stable; urgency=medium
 
   * doc: add swagger doc for /api/gpg/key (https://github.com/aptly-dev/aptly/pull/1456)
