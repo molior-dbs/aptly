@@ -1,3 +1,9 @@
+aptly (1.6.2-molior6) stable; urgency=medium
+
+  * remove swag
+
+ -- André Roth <neolynx@gmail.com>  Sun, 14 Jun 2026 16:07:02 +0200
+
 aptly (1.6.2-molior5) stable; urgency=medium
 
   * Revert debian: add swagger docs
