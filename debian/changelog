@@ -1,3 +1,9 @@
+aptly (1.6.2-molior7) stable; urgency=medium
+
+  * use protonmail x-crypto
+
+ -- André Roth <neolynx@gmail.com>  Sun, 14 Jun 2026 16:38:04 +0200
+
 aptly (1.6.2-molior6) stable; urgency=medium
 
   * remove swag
