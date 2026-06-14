@@ -1,3 +1,9 @@
+aptly (1.6.2-molior3) stable; urgency=medium
+
+  * bump version 1.6.2-molior3
+
+ -- André Roth <neolynx@gmail.com>  Sun, 14 Jun 2026 15:50:39 +0200
+
 aptly (1.6.2-molior2) stable; urgency=medium
 
   * build for trixie
