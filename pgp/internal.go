@@ -7,7 +7,6 @@ import (
 	"os"
 	"path/filepath"
 	"sort"
-	"strconv"
 	"strings"
 	"syscall"
 	"time"
@@ -73,14 +72,6 @@ func (g *GoSigner) Init() error {
 		CompressionConfig: &packet.CompressionConfig{
 			Level: 9,
 		},
-	}
-
-	if epoch := os.Getenv("SOURCE_DATE_EPOCH"); epoch != "" {
-		if sec, err := strconv.ParseInt(epoch, 10, 64); err == nil {
-			t := time.Unix(sec, 0).UTC()
-			g.signerConfig.Time = func() time.Time { return t }
-			g.signerConfig.NonDeterministicSignaturesViaNotation = packet.BoolPointer(false)
-		}
 	}
 
 	if g.passphraseFile != "" {

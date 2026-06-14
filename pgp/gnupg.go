@@ -9,7 +9,6 @@ import (
 	"os"
 	"os/exec"
 	"path/filepath"
-	"strconv"
 	"strings"
 )
 
@@ -87,12 +86,6 @@ func (g *GpgSigner) gpgArgs() []string {
 		args = append(args, "--no-tty", "--batch")
 		if g.version >= GPG21x {
 			args = append(args, "--pinentry-mode", "loopback")
-		}
-	}
-
-	if epoch := os.Getenv("SOURCE_DATE_EPOCH"); epoch != "" {
-		if _, err := strconv.ParseInt(epoch, 10, 64); err == nil {
-			args = append(args, "--faked-system-time", epoch)
 		}
 	}
 
