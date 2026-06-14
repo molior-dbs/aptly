@@ -3,7 +3,3 @@ config_version: "1"
 targets:
   molior:
     - "1.5-dev"
-build_after:
-  - "go-xz"
-  - "golang-github-swaggo-files"
-  - "golang-github-swaggo-gin-swagger"
